@@ -1,7 +1,8 @@
-function takeANumber(deliLine, name) {
-  deliLine.push(name);
+function takeANumber(deliLine) {
   
-  return `Welcome, ${name}. You are number ${(deliLine.indexOf(name) + 1)} in line.`;
+  deliLine.push(deliLine.length + 1);
+  
+  return `Welcome. You are number ${(deliLine.length)} in line.`;
 }
 
 function nowServing(katzLine) {
@@ -10,7 +11,7 @@ function nowServing(katzLine) {
   }
   
   let currentPerson = katzLine.shift();
-  return `Currently serving ${currentPerson}.`;
+  return `Currently serving number ${currentPerson}.`;
   
 }
 
@@ -19,9 +20,5 @@ function currentLine(line) {
     return "The line is currently empty.";
   }
   
-  let comboArray = [];
-  for (let i = 0; i < line.length; i++) {
-    comboArray.push(`${i + 1}. ${line[i]}`);
-  }
-  return `The line is currently: ${comboArray.join(', ')}`;
-}
+  return `The line is currently: ${line.length}`;
+} 
